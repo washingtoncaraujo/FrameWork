@@ -1,12 +1,15 @@
 import React from 'react';
 import './App.css';
 import Subtitle from './Subtitle';
+import Title from './Title';
+
 
 function App() {
   return (
     <div className='App'>
-      <h1>Título Simples</h1>
+      <Title/>
       <Subtitle text = 'Meu subtítulo'/>
+      
     </div>
   );
 }
