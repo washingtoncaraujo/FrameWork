@@ -7,11 +7,11 @@ import Title from './Title';
 function App() {
   return (
     <div className='App'>
-      <Title/>
-      <Subtitle text = 'Meu subtítulo'/>
-      
+      <Title/>  {/*Usando o componente Title*/}
+      <Subtitle text = 'Meu subtítulo'/>   {/* Usando o componente Subtitle e alterando seu props */}
+
     </div>
   );
 }
 
-export default App;
+export default App;  // Exportando a função
