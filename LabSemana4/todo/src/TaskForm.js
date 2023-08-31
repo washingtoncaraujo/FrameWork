@@ -8,7 +8,7 @@ function TaskForm({addTask}){
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (task.trim()== '') return;
+        if (task.trim()=== '') return;
         addTask({task, priority});
         setTask('');
         setPriority('low');
