@@ -15,8 +15,12 @@ function TaskList({tasks}){
             <thead>
                 <tr>
                     <th className="task-header">
-                        <AiOutlineFileText className="header-icon"/> Prioridade
+                        <AiOutlineFileText className="header-icon"/> Tarefa
                     </th>
+                    <th>
+                        <AiFillExclamationCircle className="header-icon"/> Prioridade
+                    </th>
+
                 </tr>
             </thead>
             <tbody>

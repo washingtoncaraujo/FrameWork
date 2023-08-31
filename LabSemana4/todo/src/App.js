@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import { AiFillCheckCircle } from 'react-icons/ai';
+import TaskForm from './TaskForm';
+import TaskList from './TaskList';
 
 function App() {
+  const [tasks, setTasks] = useState([]);
+  const addTask = (newTask) => {
+    setTasks([...tasks, newTask]);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className="app-title"> 
+      <AiFillCheckCircle className="app-icon"/>Lista de Tarefas
+      </h1>
+      <TaskForm addTask={addTask} />
+      <div className="task-list-container">
+        <TaskList tasks={tasks} />
+      </div>
     </div>
   );
 }
