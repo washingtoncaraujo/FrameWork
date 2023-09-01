@@ -1,9 +1,9 @@
 .task-table{
-    width: 100%;
+    width: 98%;
     border-collapse: collapse;
     margin-top: 20px;
     font-size: 16px;
-    text-align: left;
+    text-align: right;
 }
 
 .task-table th,
@@ -28,7 +28,7 @@
 /* Estilos para os pontos de prioridade*/
 
 .priority-dot {
-    display: inline-block;
+    display: inline-flex; 
     width: 12px;
     height: 12px;
     border-radius: 50%;
@@ -50,11 +50,11 @@
 /* Estilos para célula da tarefa */
 
 .task-cell {
-    width: 70%;
+    width: 60%;
 }
 
 .task-header {
-    width: 70%;
+    width: 60%;
 }
 
 /* Estilos para ícones no cabeçalhos */

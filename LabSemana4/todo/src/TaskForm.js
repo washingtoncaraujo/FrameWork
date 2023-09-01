@@ -1,20 +1,21 @@
 import React, {useState} from 'react';
-import '.TaskForm.css';
+import './TaskForm.css';
 import {RiAddLine} from 'react-icons/ri';
 
 function TaskForm({addTask}){
     const [task,  setTask] = useState('');
     const [priority, setPriority] = useState('low');
-
+    
     const handleSubmit = (e) => {
         e.preventDefault();
         if (task.trim()=== '') return;
         addTask({task, priority});
         setTask('');
-        setPriority('low');
+        setPriority('low');        
     };
+
     return (
-        <from className = "task-form" onSubmit = {handleSubmit}>
+        <form className = "task-form" onSubmit = {handleSubmit}>
             <input
             type = "text"
             placeholder="Nome da Tarefa"
@@ -30,9 +31,9 @@ function TaskForm({addTask}){
                     <option value = "high">Alta Prioridade</option>
                 </select>
                 <button type = "submit">
-                    <RiAddLine className = "button-icon"/> Adicionar Taarefa
+                    <RiAddLine className = "button-icon"/> Adicionar Tarefa
                 </button>
-            </from>
+            </form>
     );
 }
 
