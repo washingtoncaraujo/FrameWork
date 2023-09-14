@@ -10,7 +10,7 @@ import {
   AppBar,
   Toolbar
 } from "@mui/material";
-import API_URL from "./src/config";
+import API_URL from "./config";
 
 // Estilos CSS para elementos específicos do componente
 const appBarStyle = {
