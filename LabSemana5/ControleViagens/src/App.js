@@ -14,13 +14,13 @@ import API_URL from "./config";
 
 // Estilos CSS para elementos específicos do componente
 const appBarStyle = {
-  marginBottom: "20px"
+  marginBottom: "30px"
 };
 
 const pageTitleStyle = {
   fontSize: "2rem",
   fontWeight: "bold",
-  marginBottom: "20px"
+  marginBottom: "50px"
 };
 
 // Componente principal da aplicação

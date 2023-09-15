@@ -23,7 +23,7 @@ import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 const tableStyle = {
   minWidth: 650,
   margin: "auto",
-  marginTop: "20px"
+  marginTop: "30px"
 };
 
 const headerCellStyle = {
@@ -56,7 +56,7 @@ function ViageTable({ viage, handleDeleteViage, setShowForm }) {
     <div>
       {/* Cabeçalho da tabela */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
-        <Typography variant="h6">Lista de Viagens:</Typography>
+        <Typography variant="h5">Lista de Viagens:</Typography>
         <Button
           variant="contained"
           color="primary"
@@ -123,7 +123,7 @@ function ViageTable({ viage, handleDeleteViage, setShowForm }) {
                       onClick={() => handleOpenDialog(viage)}
                     >
                       Excluir
-                    </Button>
+                    </Button>                    
                   </TableCell>
                 </TableRow>
               ))
