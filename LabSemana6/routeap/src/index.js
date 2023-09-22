@@ -1,17 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// Importações necessárias do React para criar o aplicativo
+import { StrictMode } from "react";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// Importação da função createRoot para renderizar o aplicativo no DOM
+import { createRoot } from "react-dom/client";
+
+// Importação do componente principal App que será renderizado
+import App from "./App";
+
+// Obtém a referência ao elemento HTML com id "root" onde o aplicativo será renderizado
+const rootElement = document.getElementById("root");
+
+// Cria um "root" (raiz) para renderizar o aplicativo no elemento HTML com id "root"
+const root = createRoot(rootElement);
+
+// Renderiza o componente App dentro de um StrictMode
 root.render(
-  <React.StrictMode>
+  <StrictMode>
     <App />
-  </React.StrictMode>
+  </StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
