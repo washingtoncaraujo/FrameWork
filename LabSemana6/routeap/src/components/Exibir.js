@@ -62,9 +62,7 @@ return (
     <div>
       <CssBaseline />
       <Container maxWidth="lg">
-      <Typography variant="h2" align="center" style={pageTitleStyle}>
-        Viagens Programadas
-         </Typography>
+      
         {/* Condicional para renderizar o formulário ou a tabela de viagens */}
         {showForm ==1 ? (
           <ViageForm handleAddViage={handleAddViage} setShowForm={setShowForm} />
