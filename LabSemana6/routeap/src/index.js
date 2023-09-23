@@ -18,9 +18,7 @@ const exibe = createRoot(exibeElement);
 
 // Renderiza o componente App dentro de um StrictMode
 root.render(
-  <StrictMode>
-    <App />
-  </StrictMode>
+    <App />  
 );
 exibe.render(
   <Exibir />

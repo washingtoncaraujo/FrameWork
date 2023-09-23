@@ -6,11 +6,10 @@ import {
   AppBar,
   Toolbar
 } from "@mui/material";
-//import {Link, Route} from 'react-router-dom';
-import Sobre from './components/Sobre'
+
 // Estilos CSS para elementos específicos do componente
 const appBarStyle = {
-  marginBottom: "30px"
+  marginBottom: "100px"
 };
 
 const pageTitleStyle = {
@@ -21,11 +20,6 @@ const pageTitleStyle = {
 
 // Componente principal da aplicação
 function App() {
-
-  <Routers>
-    <Route path="/sobre" element={<Sobre />}/>
-  </Routers>
-
   // Renderização do componente
   return (
     <div>
@@ -35,11 +29,7 @@ function App() {
           <Typography variant="h1">Viagens</Typography>
         </Toolbar>
       </AppBar>
-      <div>
-        <button>Sobre</button>
-      </div>
     </div>
   );
 }
-
 export default App; // Exportação do componente principal

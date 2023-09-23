@@ -1,16 +1,25 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { TextField, Button, Grid, Paper, Typography, Container } from "@mui/material";
 
-function About() {
+
+function Sobre({setShowForm}) {
+  const buttonStyle = {
+    marginRight: "18px"
+  };
+
   return (
-    <div className="container">
-      <h1>Sobre</h1>
-      <p>Esta é a página "Sobre" da nossa aplicação.</p>
-      <Link to="/">
-        <button>Voltar à Home</button>
-      </Link>
-    </div>
+    <div>
+      <Paper>
+      <Typography variant="h6" gutterBottom>
+        Dúvidas
+      </Typography>
+      </Paper>
+      
+      
+      <Button onClick={() => setShowForm(3)} style={buttonStyle}>Voltar
+     </Button>
+   </div>   
   );
-}
+  }
 
-export default About;
+export default Sobre;

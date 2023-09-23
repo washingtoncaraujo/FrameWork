@@ -101,7 +101,7 @@ function ViageForm({ handleAddViage, setShowForm }) {
           >
             Adicionar
           </Button>
-          <Button onClick={() => setShowForm(false)} style={buttonStyle}>
+          <Button onClick={() => setShowForm(3)} style={buttonStyle}>
             Cancelar
           </Button>
         </div>
