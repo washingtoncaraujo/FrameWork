@@ -2,7 +2,7 @@ import React from "react";
 import { TextField, Button, Grid, Paper, Typography, Container } from "@mui/material";
 import {Routers, Route} from 'react-router-dom';
 
-function Sobre({setShowForm}) {
+function Readme({setShowForm}) {
   const buttonStyle = {
     marginRight: "18px"
   };
@@ -10,21 +10,22 @@ function Sobre({setShowForm}) {
 
   return (
     <div>
-      <Route>
-        <Route path="/readme" element = {<Readme />}></Route>
-      </Route>
       <Paper>
       <Typography variant="h6" gutterBottom>
-        Dúvidas:
+        Manual:
       </Typography>
-      <p>WCA</p>
+      <p>Este aplicativos é usado para agendar viagens</p>
+      <p>Na tela incial, clique no botaõ adicionar para </p>
+      <p>agendar uma nova viagem.</p>
+      <p>Clique no botão Excluir para excluir a viagem selecionada.</p>
+      
       </Paper>
       
       
-      <Button onClick={() => setShowForm(3)} style={buttonStyle}>Voltar
+      <Button onClick={() => setShowForm(2)} style={buttonStyle}>Voltar
      </Button>
    </div>   
   );
   }
 
-export default Sobre;
+export default Readme;
