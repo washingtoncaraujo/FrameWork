@@ -12,7 +12,7 @@ public class TaskRepository {
     private final List<Task> tasks = new ArrayList<>();
     private final AtomicLong idGenerator = new AtomicLong();
 
-    public  List<Task> FindAll(){
+    public  List<Task> findAll(){
     return tasks;
     }
     public Task findById(long id){
