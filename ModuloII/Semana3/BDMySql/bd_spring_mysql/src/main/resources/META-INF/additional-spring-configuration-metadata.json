@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "javax.persistence.jdbc.url",
+    "type": "java.lang.String",
+    "description": "A description for 'javax.persistence.jdbc.url'"
+  },
+  {
+    "name": "hibernate.dialect",
+    "type": "java.lang.String",
+    "description": "A description for 'hibernate.dialect'"
+  }
+]}
