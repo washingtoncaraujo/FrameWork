@@ -1,8 +1,8 @@
-package main.java.com.dev.bd_semana3_sql.controller;
+package com.dev.bd_semana3_sql;
 
 import org.springframework.web.bind.annotation.*; // Importa as anotações para mapear rotas e parâmetros em um controlador REST.
 import java.util.List;
-import com.example.mysql.repository.CategoryRepository; // Importa o repositório de categorias.
+import ./repository.CategoryRepository; // Importa o repositório de categorias.
 import com.example.mysql.model .Category; // Importa a model de categorias
 
 @RestController // Indica que esta classe é um controlador REST.

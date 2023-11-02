@@ -8,7 +8,7 @@
 		<version>3.1.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.dev</groupId>
+	<groupId>com.bddev</groupId>
 	<artifactId>bd_semana3_sql</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>bd_semana3_sql</name>
