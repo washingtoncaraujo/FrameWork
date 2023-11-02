@@ -25,8 +25,7 @@ import org.springframework.test.context.support.DependencyInjectionTestExecution
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import io.github.mariazevedo88.travelsapi.enumeration.TravelTypeEnum;
+import com.framworkii.apirestfull.enumeration.TravelTypeEnum;
 
 /**
  * Class that implements API integration tests
