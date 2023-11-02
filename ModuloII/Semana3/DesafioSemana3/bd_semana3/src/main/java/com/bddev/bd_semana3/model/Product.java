@@ -1,5 +1,4 @@
-package main.java.com.dev.bd_semana3_sql.model;
-
+package com.bddev.bd_semana3.model;
 
 import jakarta.persistence.Entity; // Importa a anotação de entidade do Jakarta Persistence.
 import jakarta.persistence.GeneratedValue; // Importa a anotação de geração automática.
@@ -8,9 +7,9 @@ import jakarta.persistence.Id; // Importa a anotação de chave primária.
 import jakarta.persistence.Column; // Importa a anotação de coluna.
 import jakarta.persistence.ManyToOne; // Importa a anotação de relacionamento Many-to-One.
 import jakarta.persistence.JoinColumn; // Importa a anotação de coluna de junção.
+import com.bddev.bd_semana3.model.Category;
 
-
-@ENtity
+@Entity
 public class Product{
 
     @Id
@@ -20,76 +19,61 @@ public class Product{
     @Column(nullable = false)
     private String name; // Nome do produto, não pode ser nulo.
 
-
     @Column(nullable = false)
     private double price; // Preço do produto, não pode ser nulo.
 
-
     @ManyToOne
-    @JoinColumn(name = "category id")
+    @JoinColumn(name = "category_id")
     private Category category; // Categoria à qual o produto pertence.
 
 
     // Getters e setters para as propriedades da entidade Product.
-
-
     // Getter para o ID.
 
     public Long setId(){
-
-    return id;
+        return id;
     }
-
 
     // Setter para o ID.
 
     public void setId(Long id){
-
-    this.id = id;
+        this.id = id;
     }
 
     // Getter para o nome.
 
     public String setName(){
-
-    return name;
+        return name;
     }
-
 
     // Setter para o nome.
 
     public void setName(String name){
-
-    this.name = name;
+        this.name = name;
     }
-
 
     // Getter para o preço.
 
     public double getPrice(){
-
-    return price;
+        return price;
     }
 
     // Setter para o preço.
 
     public void setPrice(double price){
-
-    this.price = price;
+        this.price = price;
     }
 
     // Getter para a categoria.
 
     public Category sgetCategory(){
-
-    return category;
+        return category;
     }
 
     // Setter para a categoria.
 
     public void setCategory(Category category){
-
-    this.category = category;
+        this.category = category;
     }
 }
 

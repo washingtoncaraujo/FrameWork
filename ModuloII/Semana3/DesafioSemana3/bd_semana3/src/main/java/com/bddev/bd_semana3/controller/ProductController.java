@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RestController; // Importa a anot
 
 import com.bddev.bd_semana3.repository.CategoryRepository;
 import com.bddev.bd_semana3.repository.ProductRepository;
+import com.bddev.bd_semana3.model.Product;
+import com.bddev.bd_semana3.model.Category;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -28,17 +30,17 @@ public class ProductController{
         return productRepository.findAll(); // Retorna todos os produtos no banco de dados.
     }
 
-    @GetMapping("/category/TIcategoryIdk+") // Mapeia o método para responder a requisições GET com um parâmetro de caminho (categoryId).
-    public List<Product> sgetProductsByCategory(@Pathvariable Long categoryId){
-    Category category = categoryRepository.findById(categoryId).orElse(null); // Busca a categoria pelo ID.
-    if (category != null){
-        return productRepository.findByCategory(category); // Retorna os produtos da categoria.
-    }
+    @GetMapping("/category/{categoryId}") // Mapeia o método para responder a requisições GET com um parâmetro de caminho (categoryId).
+    public List<Product> getProductsByCategory(@PathVariable Long categoryId){
+        Category category = categoryRepository.findById(categoryId).orElse(null); // Busca a categoria pelo ID.
+        if (category != null){
+            return productRepository.findByCategory(category); // Retorna os produtos da categoria.
+        }
         return new ArrayList<>(); // Retorna uma lista vazia se a categoria não for encontrada.
     }
 
-    @GetMapping("/below-price/fímaxPricel-") // Mapeia o método para responder a requisições GET com um parâmetro de caminho (maxPrice).
-    public List<Product> getProductsBelowMaxPrice(@Pathvariable double maxPrice){
+    @GetMapping("/below-price/{maxPrice}") // Mapeia o método para responder a requisições GET com um parâmetro de caminho (maxPrice).
+    public List<Product> getProductsBelowMaxPrice(@PathVariable double maxPrice){
         return productRepository.findProductsBelowMaxPrice(maxPrice); // Retorna os produtos com preço abaixo do valor máximo.
     }
 }

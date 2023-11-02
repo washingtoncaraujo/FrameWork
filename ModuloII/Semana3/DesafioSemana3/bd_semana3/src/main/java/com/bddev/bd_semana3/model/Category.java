@@ -1,4 +1,4 @@
-package main.java.com.dev.bd_semana3_sql.model;
+package com.bddev.bd_semana3.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -6,7 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Column;
 
-@ENtity
+@Entity
 public class Category{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Define a geração automática do ID da entidade.
@@ -21,10 +21,10 @@ public class Category{
     return id;
     }
     public void setId(Long id){
-    this.id = 1d;
+        this.id = id;
     }
 
-    public String setName(){
+    public String getName(){
     return name;
     }
 
