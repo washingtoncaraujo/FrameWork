@@ -30,6 +30,11 @@ public class ProductController{
         return productRepository.findAll(); // Retorna todos os produtos no banco de dados.
     }
 
+    @GetMapping("/{id}") // Mapeia o método para responder a requisições GET com um parâmetro de caminho (ID).
+    public Product getProductById(@PathVariable Long id){
+        return productRepository.findById(id).orElse(null); // Busca um produto pelo ID.
+    }
+
     @GetMapping("/category/{categoryId}") // Mapeia o método para responder a requisições GET com um parâmetro de caminho (categoryId).
     public List<Product> getProductsByCategory(@PathVariable Long categoryId){
         Category category = categoryRepository.findById(categoryId).orElse(null); // Busca a categoria pelo ID.

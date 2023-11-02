@@ -30,7 +30,7 @@ public class Product{
     // Getters e setters para as propriedades da entidade Product.
     // Getter para o ID.
 
-    public Long setId(){
+    public Long getId(){
         return id;
     }
 
@@ -42,7 +42,7 @@ public class Product{
 
     // Getter para o nome.
 
-    public String setName(){
+    public String getName(){
         return name;
     }
 
