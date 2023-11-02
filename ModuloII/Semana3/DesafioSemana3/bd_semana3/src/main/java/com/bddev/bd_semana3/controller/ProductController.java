@@ -1,12 +1,12 @@
-package com.dev.bd_semana3_sql.controller;
+package com.bddev.bd_semana3.controller;
 
 import org.springframework.web.bind.annotation.GetMapping; // Importa a anotação de mapeamento GET.
 import org.springframework.web.bind.annotation.PathVariable; // Importa a anotação de variável de caminho.
 import org.springframework.web.bind.annotation.RequestMapping; // Importa a anotação de mapeamento de requisição.
 import org.springframework.web.bind.annotation.RestController; // Importa a anotação de controlador REST.
 
-import main.java.com.dev.bd_semana3_sql.repository.CategoryRepository;
-import main.java.com.dev.bd_semana3_sql.repository.ProductRepository;
+import com.bddev.bd_semana3.repository.CategoryRepository;
+import com.bddev.bd_semana3.repository.ProductRepository;
 
 import java.util.List;
 import java.util.ArrayList;

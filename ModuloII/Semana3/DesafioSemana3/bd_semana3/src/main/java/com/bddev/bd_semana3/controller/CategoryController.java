@@ -1,6 +1,9 @@
-package com.dev.bd_semana3_sql;
+package com.bddev.bd_semana3.controller;
 
 import org.springframework.web.bind.annotation.*; // Importa as anotações para mapear rotas e parâmetros em um controlador REST.
+
+import com.bddev.bd_semana3.repository.CategoryRepository;
+
 import java.util.List;
 
 @RestController // Indica que esta classe é um controlador REST.

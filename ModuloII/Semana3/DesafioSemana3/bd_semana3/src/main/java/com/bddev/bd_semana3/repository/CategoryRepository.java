@@ -1,11 +1,11 @@
-package main.java.com.dev.bd_semana3_sql.repository;
-
+package com.bddev.bd_semana3.repository;
 
 import java.util.List;
+import java.util.Locale.Category;
+
 import org.springframework.data.jpa.repository.JpaRepository; // Importa a interface de repositório do Spring Data JPA.
 import org.springframework.data.jpa.repository.Query; // Importa a anotação de consulta personalizada do Spring Data JPA.
 import org.springframework.data.repository.query.Param; // Importa a anotação de parâmetro da consulta personalizada.
-import com.example.mysql.model .Category; // Importa a classe de modelo Category.
 
 public interface CategoryRepository extends JpaRepository<Category, Long>{
 
