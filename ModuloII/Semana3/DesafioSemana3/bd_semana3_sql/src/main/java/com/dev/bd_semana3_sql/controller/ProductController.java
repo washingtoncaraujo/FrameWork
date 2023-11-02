@@ -1,15 +1,15 @@
-package main.java.com.dev.bd_semana3_sql.controller;
+package com.dev.bd_semana3_sql.controller;
 
 import org.springframework.web.bind.annotation.GetMapping; // Importa a anotação de mapeamento GET.
 import org.springframework.web.bind.annotation.PathVariable; // Importa a anotação de variável de caminho.
 import org.springframework.web.bind.annotation.RequestMapping; // Importa a anotação de mapeamento de requisição.
 import org.springframework.web.bind.annotation.RestController; // Importa a anotação de controlador REST.
+
+import main.java.com.dev.bd_semana3_sql.repository.CategoryRepository;
+import main.java.com.dev.bd_semana3_sql.repository.ProductRepository;
+
 import java.util.List;
 import java.util.ArrayList;
-import com.example.mysql.model.Product; // Importa a classe de modelo Product.
-import com.example.mysql.model.Category; // Importa a classe de modelo Category.
-import com.example.mysql.repository.ProductRepository; // Importa o repositório de produtos.
-import com.example.mysql.repository.CategoryRepository; // Importa o repositório de categorias.
 
 @RestController // Indica que esta classe é um controlador REST.
 @RequestMapping("/products") // Define o mapeamento base para todas as rotas deste controlador.
