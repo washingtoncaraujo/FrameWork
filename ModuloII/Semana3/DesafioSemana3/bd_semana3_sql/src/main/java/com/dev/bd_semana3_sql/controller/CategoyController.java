@@ -18,22 +18,22 @@ public class CategoryController{
     }
 
     @GetMapping("/fidk") // Mapeia o método para responder a requisições GET com um parâmetro de caminho (ID).
-    public Category getCategoryById(aPathVariable Long id){
+    public Category getCategoryById(@PathVariable Long id){
     return categoryRepository.findById(id).orElse(null); // Busca uma categoria pelo ID.
     }
 
     @GetMapping("/byName/TtcategoryNamet+") // Mapeia o método para responder a requisições GET com um parâmetro de caminho (categoryName).
-    public Category getCategoryByName(aPathVariable String categoryName){
+    public Category getCategoryByName(@PathVariable String categoryName){
     return categoryRepository.findCategoryByName(categoryName); // Busca uma categoria pelo nome usando JPQL.
     }
 
     @GetMapping("/byNameSQL/ÍcategoryName|+") // Mapeia o método para responder a requisições GET com um parâmetro de caminho (categoryName).
-    public Category getCategoryByNameSQL(APathvariable String categoryName){
+    public Category getCategoryByNameSQL(@Pathvariable String categoryName){
     return categoryRepository.findCategoryByNameSQL(categoryName); // Busca uma categoria pelo nome usando SQL nativo.
     }
 
     @PostMapping // Mapeia o método para responder a requisições POST.
-    public Category createCategory(aRequestBody Category category){
+    public Category createCategory(@RequestBody Category category){
     return categoryRepository.save(category); // Cria uma nova categoria no banco de dados.
     }
 
