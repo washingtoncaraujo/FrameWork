@@ -1,5 +1,7 @@
 package com.bddev.bd_semana3.controller;
 
+import org.hibernate.query.NativeQuery;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.web.bind.annotation.GetMapping; // Importa a anotação de mapeamento GET.
 import org.springframework.web.bind.annotation.PathVariable; // Importa a anotação de variável de caminho.
 import org.springframework.web.bind.annotation.RequestMapping; // Importa a anotação de mapeamento de requisição.
@@ -47,5 +49,11 @@ public class ProductController{
     @GetMapping("/below-price/{maxPrice}") // Mapeia o método para responder a requisições GET com um parâmetro de caminho (maxPrice).
     public List<Product> getProductsBelowMaxPrice(@PathVariable double maxPrice){
         return productRepository.findProductsBelowMaxPrice(maxPrice); // Retorna os produtos com preço abaixo do valor máximo.
+    }
+
+    @Query(nativeQuery = true, value = "select name" + " from  product" + " where like "s*"")
+    @GetMapping("/{id}") // Mapeia o método para responder a requisições GET com um parâmetro de caminho (ID).
+    public Product getProductById(@PathVariable Long id){
+        return productRepository.findById(id).orElse(null); // Busca um produto pelo ID.
     }
 }
