@@ -16,5 +16,7 @@ public interface ProductRepository extends JpaRepository<Product, Long>{ // Mét
     @Query(value = "SELECT * FROM product ORDER BY name", nativeQuery = true)
     List<Product> findProductsOrder();
 
+    @Query(value = "SELECT * FROM product ORDER BY name", nativeQuery = true)
+    List<Product> findProductByCategoryName(String categoryName);
 }
 

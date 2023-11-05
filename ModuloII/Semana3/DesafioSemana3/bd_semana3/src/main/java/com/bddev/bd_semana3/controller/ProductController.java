@@ -53,4 +53,9 @@ public class ProductController{
     public List<Product> getProductsOrder(){
         return productRepository.findProductsOrder(); // Retorna os produtos em orde alfabética
     }
+
+    @GetMapping("/byCategoryName/{categoryName}")
+    public List<Product> getProductByCategoryName(@PathVariable String categoryName){
+        return productRepository.findProductByCategoryName(categoryName);
+    }
 }

@@ -40,6 +40,11 @@ public class CategoryController{
         return categoryRepository.findCategoryByOrderName(); // Retorna as categorias em ordem alfabética
     }
 
+    @GetMapping("/minProductCount")
+    public List<Category> getCategoriesByMinProductCount(@RequestParam int minProductCount){
+        return categoryRepository.findCategoriesByMinProductCount(minProductCount);
+    }
+
     @PostMapping // Mapeia o método para responder a requisições POST.
     public Category createCategory(@RequestBody Category category){
     return categoryRepository.save(category); // Cria uma nova categoria no banco de dados.

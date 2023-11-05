@@ -21,5 +21,8 @@ public interface CategoryRepository extends JpaRepository<Category, Long>{  // C
  @Query(value = "SELECT * FROM category ORDER BY name", nativeQuery = true)
  List<Category> findCategoryByOrderName();
 
+
+ @Query(value = "SELECT * FROM category ORDER BY name", nativeQuery = true)
+    List<Category> findCategoriesByMinProductCount(int minProductCount);
 }
 
