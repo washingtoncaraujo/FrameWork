@@ -49,7 +49,7 @@ public class ProductController{
         return productRepository.findProductsBelowMaxPrice(maxPrice); // Retorna os produtos com preço abaixo do valor máximo.
     }
 
-    @GetMapping("/order") // Mapeia o método para responder a requisições GET com um parâmetro de caminho (maxPrice).
+    @GetMapping("/order") // Mapeia o método para responder a requisições GET com um parâmetro de caminho.
     public List<Product> getProductsOrder(){
         return productRepository.findProductsOrder(); // Retorna os produtos em orde alfabética
     }

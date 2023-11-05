@@ -35,6 +35,11 @@ public class CategoryController{
         return categoryRepository.findCategoryByNameSQL(categoryName); // Busca uma categoria pelo nome usando SQL nativo.
     }
 
+    @GetMapping("/orderName") // Mapeia o método para responder a requisições GET com um parâmetro de caminho (categoryName).
+    public List<Category> getCategoryByOrderName(){
+        return categoryRepository.findCategoryByOrderName(); // Retorna as categorias em ordem alfabética
+    }
+
     @PostMapping // Mapeia o método para responder a requisições POST.
     public Category createCategory(@RequestBody Category category){
     return categoryRepository.save(category); // Cria uma nova categoria no banco de dados.

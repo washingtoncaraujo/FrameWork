@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface ProductRepository extends JpaRepository<Product, Long>{ // Método de consulta para encontrar produtos por categoria.
     List<Product> findByCategory(Category category); // Consulta personalizada via SQL nativo para encontrar produtos com preço abaixo de um valor máximo
-    @Query(value = "SELECT x FROM product p WHERE p.price < :maxPrice", nativeQuery = true)
+    @Query(value = "SELECT * FROM product p WHERE p.price < :maxPrice", nativeQuery = true)
     List<Product> findProductsBelowMaxPrice(@Param("maxPrice") double maxPrice);
 
     @Query(value = "SELECT * FROM product ORDER BY name", nativeQuery = true)
