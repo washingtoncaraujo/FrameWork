@@ -22,7 +22,7 @@ public interface CategoryRepository extends JpaRepository<Category, Long>{  // C
  List<Category> findCategoryByOrderName();
 
 
- @Query(value = "SELECT * FROM category ORDER BY name", nativeQuery = true)
+ @Query(value = "SELECT name FROM  category WHERE  2 <= (SELECT  * FROM  product JOIN category ON product.category_id = category.id)" , nativeQuery = true)
     List<Category> findCategoriesByMinProductCount(int minProductCount);
 }
 
