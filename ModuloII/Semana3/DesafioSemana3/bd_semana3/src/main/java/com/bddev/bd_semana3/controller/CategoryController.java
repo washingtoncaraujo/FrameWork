@@ -67,6 +67,6 @@ public class CategoryController{
 
     @DeleteMapping("/{id}") // Mapeia o método para responder a requisições DELETE com um parâmetro de caminho (ID).
     public void deleteCategory(@PathVariable Long id){
-    categoryRepository.deleteById(id); // Exclui uma categoria pelo ID.
+       categoryRepository.deleteById(id); // Exclui uma categoria pelo ID.
     }
 }
