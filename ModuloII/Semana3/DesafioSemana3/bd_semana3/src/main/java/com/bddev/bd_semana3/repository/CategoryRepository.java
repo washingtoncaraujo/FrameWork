@@ -9,8 +9,6 @@ import java.util.List;
 
 public interface CategoryRepository extends JpaRepository<Category, Long>{  // Consulta personalizada usando JPQL (JPA Query Language) para encontrar categorias com um nome específico.
 
- // Nesta consulta, o ORM (JPA) fará a consulta automaticamente com base na sintaxe JPQL.
-
  Category findCategoryByName(String catesgoryName);  // Consulta personalizada usando SQL nativo para encontrar categorias com um nome específico.
 
  // Esta consulta usa diretamente a sintaxe do MySQL.
@@ -22,7 +20,11 @@ public interface CategoryRepository extends JpaRepository<Category, Long>{  // C
  List<Category> findCategoryByOrderName();
 
 
- @Query(value = "SELECT name FROM  category WHERE  2 <= (SELECT  * FROM  product JOIN category ON product.category_id = category.id)" , nativeQuery = true)
-    List<Category> findCategoriesByMinProductCount(int minProductCount);
+ @Query(value = "" , nativeQuery = true)
+ List<Category> findCategoriesByMinProductCount(@Param("minProductCount") int minProductCount);
+
+ @Query(value = "SELECT * FROM category WHERE name LIKE %:desc%" , nativeQuery = true)
+ List<Category> findCategoriesByDescName(@Param("desc") String desc);
+
 }
 

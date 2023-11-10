@@ -40,9 +40,14 @@ public class CategoryController{
         return categoryRepository.findCategoryByOrderName(); // Retorna as categorias em ordem alfabética
     }
 
-    @GetMapping("/minProductCount")
+    @GetMapping("/minProductCount/")
     public List<Category> getCategoriesByMinProductCount(@RequestParam int minProductCount){
         return categoryRepository.findCategoriesByMinProductCount(minProductCount);
+    }
+
+    @GetMapping("/descName/{desc}")
+    public List<Category> getCategoriesByDescName(@PathVariable String desc){
+        return categoryRepository.findCategoriesByDescName(desc);
     }
 
     @PostMapping // Mapeia o método para responder a requisições POST.
