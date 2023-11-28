@@ -1,7 +1,7 @@
 import React from "react";
 import { TextField, Button, Grid, Paper, Typography, Container } from "@mui/material";
 import {BrowserRouter as Router, Routes, Link, Route} from 'react-router-dom';
-import Readme from '../rotas/Readme';
+import Readme from '../rotas/readme';
 function Sobre({setShowForm}) {
   const buttonStyle = {
     marginRight: "18px"

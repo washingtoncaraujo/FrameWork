@@ -1,19 +1,18 @@
-package com.dev.backend_render;
-import org.springframework.web.bind.annotation.GetMapping; // Importa a anotação de mapeamento GET.
-import org.springframework.web.bind.annotation.PathVariable; // Importa a anotação de variável de caminho.
-import org.springframework.web.bind.annotation.RequestMapping; // Importa a anotação de mapeamento de requisição.
-import org.springframework.web.bind.annotation.RestController; // Importa a anotação de controlador REST.
-
+package com.dev.backend_render.controller;
+import com.dev.backend_render.repository.ClienteRepository;
+import com.dev.backend_render.model.Cliente;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 
 @RestController // Indica que esta classe é um controlador REST.
 @RequestMapping("/cliente") // Define o mapeamento base para todas as rotas deste controlador.
 public class ClienteController{
     private final ClienteRepository clienteRepository;
-    
-    public ClienteController(ClienteRepository clioenteRepository){
-        this.clienteRepository = clioenteRepository;
-        
+
+    public ClienteController(ClienteRepository clienteRepository){
+        this.clienteRepository = clienteRepository;
+
     }
 
     @GetMapping // Mapeia o método para responder a requisições GET na rota base ("/products").
@@ -26,5 +25,24 @@ public class ClienteController{
         return clienteRepository.findById(id).orElse(null); // Busca um produto pelo ID.
     }
 
-        
+    @DeleteMapping("/{id}") // Mapeia o método para responder a requisições DELETE com um parâmetro de caminho (ID).
+    public void deleteCliente(@PathVariable Long id){
+        clienteRepository.deleteById(id); // Exclui uma categoria pelo ID.
+    }
+
+    @PostMapping // Mapeia o método para responder a requisições POST.
+    public Cliente createCliente(@RequestBody Cliente cliente){
+        return clienteRepository.save(cliente); // Cria um cliente no banco de dados.
+    }
+
+    @PutMapping("/{id}") // Mapeia o método para responder a requisições PUT com um parâmetro de caminho (ID).
+    public Cliente updateCliente(@PathVariable Long id, @RequestBody Cliente updatedClinete){
+        Cliente existingCliente = clienteRepository.findById(id).orElse(null); // Busca a categoria existente pelo ID.
+        if (existingCliente != null){
+            existingCliente.setUsuario(updatedClinete.getUsuario()); // Atualiza o nome da categoria.
+            return clienteRepository.save(existingCliente); // Salva a categoria atualizada no banco de dados.
+        }
+        return null; // Retorna nulo se a categoria não for encontrada.
+    }
+
 }

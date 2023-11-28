@@ -1,4 +1,4 @@
-package com.dev.backend_render;
+package com.dev.backend_render.model;
 import jakarta.persistence.Entity; // Importa a anotação de entidade do Jakarta Persistence.
 import jakarta.persistence.GeneratedValue; // Importa a anotação de geração automática.
 import jakarta.persistence.GenerationType; // Importa a estratégia de geração automática.
@@ -26,10 +26,10 @@ public class Cliente{
 
     @Column(nullable = false)
     private String data; // data da viagem
-    
+
     @Column(nullable = false)
     private String hora; // hora da vaigem
-    
+
     @Column(nullable = false)
     private String aprovada; // a viagem foi aprovada?
 
@@ -85,8 +85,7 @@ public class Cliente{
         this.aprovada = aprovada;
     }
 
-    
 
-}  
 
-   
+}
+
