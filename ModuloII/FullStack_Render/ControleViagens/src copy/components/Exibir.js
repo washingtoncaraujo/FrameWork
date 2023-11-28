@@ -1,33 +1,26 @@
-// Importações necessárias do React e de outras bibliotecas
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import ViageForm from "./components/ViageForm";
-import ViageTable from "./components/ViageTable";
-import {
-  CssBaseline,
-  Container,
-  Typography,
-  AppBar,
-  Toolbar
-} from "@mui/material";
-import API_URL from "./config";
+import ViageForm from "./ViageForm";
+import ViageTable from "./ViageTable";
+import Sobre from "./Sobre";
+import { CssBaseline, Container, Typography, AppBar, Toolbar } from "@mui/material";
+import API_URL from "../config";
 
 // Estilos CSS para elementos específicos do componente
 const appBarStyle = {
   marginBottom: "30px"
 };
-
 const pageTitleStyle = {
   fontSize: "2rem",
   fontWeight: "bold",
   marginBottom: "50px"
 };
 
-// Componente principal da aplicação
-function App() {
-  // Estados locais para armazenar a lista de jogos e controlar a exibição do formulário
+// Função principal
+function Exibir(){
+      // Estados locais para armazenar a lista de jogos e controlar a exibição do formulário
   const [viages, setviages] = useState([]);
-  const [showForm, setShowForm] = useState(false);
+  const [showForm, setShowForm] = useState(3);
 
   // Efeito colateral para buscar a lista de jogos ao montar o componente
   useEffect(() => {
@@ -58,39 +51,30 @@ function App() {
   // Função para excluir um jogo da coleção
   const handleDeleteViage = async (viageId) => {
     try {
-      await axios.delete(`${API_URL}/${viageId}`);
+      await axios.delete(`${API_URL}${viageId}`);
       fetchviages(); // Atualiza a lista de jogos após a exclusão
     } catch (error) {
       console.error("Erro ao excluir viagem:", error);
     }
   };
 
-  // Renderização do componente
-  return (
+return (
     <div>
       <CssBaseline />
-      <AppBar position="static" style={appBarStyle}>
-        <Toolbar>
-          <Typography variant="h6">Viagens</Typography>
-        </Toolbar>
-      </AppBar>
       <Container maxWidth="lg">
-        <Typography variant="h2" align="center" style={pageTitleStyle}>
-        Viagens Programadas
-        </Typography>
+      
         {/* Condicional para renderizar o formulário ou a tabela de viagens */}
-        {showForm ? (
+        {showForm ==1 ? (
           <ViageForm handleAddViage={handleAddViage} setShowForm={setShowForm} />
-        ) : (
+        ): showForm ==2 ? (< Sobre setShowForm={setShowForm}/>) : (
           <ViageTable
             viage={viages}
             handleDeleteViage={handleDeleteViage}
             setShowForm={setShowForm}
           />
-        )}
+        ) }
       </Container>
     </div>
   );
 }
-
-export default App; // Exportação do componente principal
+export default Exibir;

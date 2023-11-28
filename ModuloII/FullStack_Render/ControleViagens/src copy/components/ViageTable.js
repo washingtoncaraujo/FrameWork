@@ -54,14 +54,16 @@ function ViageTable({ viage, handleDeleteViage, setShowForm }) {
 
   return (
     <div>
+      
       {/* Cabeçalho da tabela */}
+      
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Typography variant="h5">Lista de Viagens:</Typography>
         <Button
           variant="contained"
           color="primary"
           startIcon={<AddCircleOutlineIcon />}
-          onClick={() => setShowForm(true)}
+          onClick={() => setShowForm(1)}
         >
           Adicionar Viagem
         </Button>
@@ -131,7 +133,7 @@ function ViageTable({ viage, handleDeleteViage, setShowForm }) {
           </TableBody>
         </Table>
       </TableContainer>
-
+      <Button onClick={()=>setShowForm(2)} color = "warning" >Sobre</Button>
       {/* Diálogo de confirmação para excluir uma viagem */}
       <Dialog open={openDialog} onClose={() => setOpenDialog(false)}>
         <DialogTitle>Confirmar Exclusão</DialogTitle>
