@@ -1,12 +1,13 @@
 package com.dev.backend_render.controller;
 import com.dev.backend_render.repository.ClienteRepository;
 import com.dev.backend_render.model.Cliente;
+import org.springframework.http.StreamingHttpOutputMessage;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 
 @RestController // Indica que esta classe é um controlador REST.
-@RequestMapping("/cliente") // Define o mapeamento base para todas as rotas deste controlador.
+@RequestMapping("/Viagens") // Define o mapeamento base para todas as rotas deste controlador.
 public class ClienteController{
     private final ClienteRepository clienteRepository;
 

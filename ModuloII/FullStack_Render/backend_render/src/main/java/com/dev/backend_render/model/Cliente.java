@@ -7,6 +7,9 @@ import jakarta.persistence.Column; // Importa a anotação de coluna.
 import jakarta.persistence.ManyToOne; // Importa a anotação de relacionamento Many-to-One.
 import jakarta.persistence.JoinColumn; // Importa a anotação de coluna de junção.
 
+import javax.xml.crypto.Data;
+import java.util.Date;
+
 
 @Entity
 public class Cliente{
